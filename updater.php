@@ -108,7 +108,7 @@ class WP_GitHub_Updater {
 			'raw_url',
 			'github_url',
 			'zip_url',
-			'minimum',
+			'requires',
 			'tested',
 			'readme',
 		);
@@ -396,7 +396,7 @@ class WP_GitHub_Updater {
 		$response->version = $this->config['new_version'];
 		$response->author = $this->config['author'];
 		$response->homepage = $this->config['homepage'];
-		$response->minimum = $this->config['minimum'];
+		$response->requires = $this->config['requires'];
 		$response->tested = $this->config['tested'];
 		$response->downloaded   = 0;
 		$response->last_updated = $this->config['last_updated'];

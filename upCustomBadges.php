@@ -33,25 +33,34 @@ function my_plugin_menu() {
 }
 
 	// Include AutoUpdate Functionality from GitHub
-include_once('updater.php');
+add_action( 'init', 'github_plugin_updater_init' );
+function github_plugin_updater_init() {
 
-if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
-    $config = array(
-        'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
-        'proper_folder_name' => 'upCustomBadges', // this is the name of the folder your plugin lives in
-        'api_url' => 'https://api.github.com/repos/kLOsk/upCustomBadges', // the github API url of your github repo
-        'raw_url' => 'https://raw.github.com/kLOsk/upCustomBadges', // the github raw url of your github repo
-        'github_url' => 'https://github.com/kLOsk/upCustomBadges', // the github url of your github repo
-        'zip_url' => 'https://github.com/kLOsk/upCustomBadges/zipball/master', // the zip url of the github repo
-        'sslverify' => true, // wether WP should check the validity of the SSL cert when getting an update
-        'minimum' => '3.5', // which version of WordPress does your plugin require?
-        'tested' => '3.8.1', // which version of WordPress is your plugin tested up to?
-        'readme' => 'README.md', // which file to use as the readme for the version number
-        'access_token' => '', // Access private repositories by authorizing under Appearance > Github Updates when this example plugin is installed
-    );
-    new WP_GitHub_Updater($config);
+	include_once 'updater.php';
+
+	define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'upCustomBadges',
+			'api_url' => 'https://api.github.com/repos/kLOsk/upCustomBadges',
+			'raw_url' => 'https://raw.github.com/kLOsk/upCustomBadges/master',
+			'github_url' => 'https://github.com/kLOsk/upCustomBadges',
+			'zip_url' => 'https://github.com/kLOsk/upCustomBadges/archive/master.zip',
+			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '3.8',
+			'readme' => 'README.md',
+			'access_token' => '',
+		);
+
+		new WP_GitHub_Updater( $config );
+
+	}
+
 }
-
 	// Add settings link on plugin page
 function your_plugin_settings_link($links) { 
   $settings_link = '<a href="options-general.php?page=upCustomBadges.php">Settings</a>'; 
