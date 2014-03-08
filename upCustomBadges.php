@@ -3,11 +3,11 @@
  * Plugin Name: UserPro Custom Badges
  * Plugin URI: http://www.daniel-klose.com
  * Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a>
- * Version: 0.3.1
+ * Version: 0.3.5
  * Author: Daniel Klose
  * Author URI: http://www.daniel-klose.com
  * License: GPL2
- *  Copyright 2014  Daniel Klose
+ *  Copyright 2014  Daniel Klose info@daniel-klose.com
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -30,6 +30,26 @@ add_action( 'admin_menu', 'my_plugin_menu' );
 
 function my_plugin_menu() {
 	add_options_page( 'User Pro Custom Badges Options', 'UP Custom Badges', 'manage_options', 'upCustomBadges', 'upCustomBadgesOptions' );
+}
+
+	// Include AutoUpdate Functionality from GitHub
+include_once('updater.php');
+
+if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+    $config = array(
+        'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
+        'proper_folder_name' => 'upCustomBadges', // this is the name of the folder your plugin lives in
+        'api_url' => 'https://api.github.com/repos/kLOsk/upCustomBadges', // the github API url of your github repo
+        'raw_url' => 'https://raw.github.com/kLOsk/upCustomBadges', // the github raw url of your github repo
+        'github_url' => 'https://github.com/kLOsk/upCustomBadges', // the github url of your github repo
+        'zip_url' => 'https://github.com/kLOsk/upCustomBadges/zipball/master', // the zip url of the github repo
+        'sslverify' => true, // wether WP should check the validity of the SSL cert when getting an update
+        'minimum' => '3.5.0', // which version of WordPress does your plugin require?
+        'tested' => '3.8.1', // which version of WordPress is your plugin tested up to?
+        'readme' => 'README.md', // which file to use as the readme for the version number
+        'access_token' => '', // Access private repositories by authorizing under Appearance > Github Updates when this example plugin is installed
+    );
+    new WP_GitHub_Updater($config);
 }
 
 	// Add settings link on plugin page
