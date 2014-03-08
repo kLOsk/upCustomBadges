@@ -110,7 +110,7 @@ function upCustomBadgesOptions() {
 	}
 	else {
 		echo '<div class="wrap">';
-		echo '<p>Plugin not active. Make to have UserPro activated on your WordPress installation. <a href="http://goo.gl/S1sOgz">Buy UserPro on CodeCanyon</a></p>';
+		echo '<p>Plugin not active. Make sure to have UserPro installed and activated. <a href="http://goo.gl/S1sOgz">Buy UserPro on CodeCanyon here</a></p>';
 		echo '</div>';
 	}
 }
