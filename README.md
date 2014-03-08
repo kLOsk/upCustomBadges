@@ -1,7 +1,7 @@
 upCustomBadges
 ==============
 
-~Current Version:0.4~
+~Current Version:0.5~
 
 Please note: This is a Plugin that works with the awesome UserPro Plugin by Ahmed. In order to use it you need the Plugin which can be purchased here: http://goo.gl/S1sOgz
 
