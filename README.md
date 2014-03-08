@@ -31,5 +31,6 @@ Changelog
 =========
 
 v1.0
+
 The plugin should now work fully. It has an autoupdate mechanism included that triggers the WP update function, once I upload a new version here on GitHub. Neat, eh?
 I also fixed the button feedback. They now tell you that everything went well! I will hunt for more badges and add them to the plugin. Enjoy!
