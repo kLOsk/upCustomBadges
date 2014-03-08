@@ -3,7 +3,7 @@
  * Plugin Name: UserPro Custom Badges
  * Plugin URI: http://www.daniel-klose.com
  * Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a>
- * Version: 0.6
+ * Version: 0.7
  * Author: Daniel Klose
  * Author URI: http://www.daniel-klose.com
  * License: GPL2
