@@ -3,7 +3,7 @@
  Plugin Name: UserPro Custom Badges
  Plugin URI: http://www.daniel-klose.com
  Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a> 
- Version: 0.7
+ Version: 1.0
  Author: Daniel Klose
  Author URI: http://www.daniel-klose.com
  License: GPL2
@@ -76,42 +76,56 @@ function upCustomBadgesOptions() {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
 	
-	if( is_plugin_active( 'userpro/index.php' ) ) {
-		?>
+	if( is_plugin_active( 'userpro/index.php' ) ) {?>
 		<div class="wrap">
-			<script>  
-				//Execute PHP Copy Script
+		<script type="text/javascript"> 
 				function do_copy(){
 					var xhReq = new XMLHttpRequest();
-					var request = "../wp-content/plugins/upCustomBadges/copy.php" // prepare a request to script
-					xhReq.open("GET", request, false);  // send a request
+					var request = "../wp-content/plugins/upCustomBadges/copy.php";
+					xhReq.open("GET", request, false);
 					xhReq.send(null);
-					document.getElementsByID("results").innerHTML=xhReq.responseText  /// display results
+					var serverResponse = xhReq.responseText;
+					alert(serverResponse);
 					}
 				
-				//Execute PHP Delete Script
+				
 				function do_delete(){
 					var xhReq = new XMLHttpRequest();
-					var request = "../wp-content/plugins/upCustomBadges/delete.php" // prepare a request to script
-					xhReq.open("GET", request, false);  // send a request
+					var request = "../wp-content/plugins/upCustomBadges/delete.php";
+					xhReq.open("GET", request, false);
 					xhReq.send(null);
-					document.getElementsByID("results").innerHTML=xhReq.responseText  /// display results
+					var serverResponse = xhReq.responseText;
+					alert(serverResponse); 
 					}
 			</script>
+			<h2>User Pro Custom Badges</h2>
 	
-			<input type="button" value="Copy Badges" name="copy_badges"  onclick="do_copy()">
-			<input type="button" value="Delete Badges" name="delete_badges"  onclick="do_delete()">
-			<div id="results">Click copy or delete to add or remove badges from UserPro.</br>
-							  Badges by http://symb.ly/
+			<div class="wrap">
+				<p><input type="button" value="Copy Badges" name="copy_badges"  onclick="do_copy()" class="button-primary"></p>
+				<p>Copy the badges to the User Pro Plugin</p>
 			</div>
+			
+			<div class="wrap">
+				<p><input type="button" value="Delete Badges" name="delete_badges"  onclick="do_delete()" class="button-secondary"></p>
+				<p>Delete the badges from User Pro. Stock Badges will remain unchanged!</p>
+			</div>
+			
+			<div class="wrap">Badges by <a href="http://symb.ly/">http://symb.ly/</a>
+			</div>
+			
+			<center><div alt="f328" class="dashicons dashicons-smiley" data-title="Smiley"></div> by <a href="http://www.daniel-klose.com">Daniel-Klose.com</a>
+			</center>
 
 		</div>
-		<?php
-	}
-	else {
-		echo '<div class="wrap">';
-		echo '<p>Plugin not active. Make sure to have UserPro installed and activated. <a href="http://goo.gl/S1sOgz">Buy UserPro on CodeCanyon here</a></p>';
-		echo '</div>';
-	}
+	<?php }
+	else { ?>
+	<div class="wrap">
+		<h2>User Pro Custom Badges</h2>
+		
+		<div class="wrap">
+		<p>Plugin not active. Make sure to have UserPro installed and activated. <a href="http://goo.gl/S1sOgz">Buy UserPro on CodeCanyon here</a></p>
+		</div>
+	</div>
+	<?php }
 }
 ?>
