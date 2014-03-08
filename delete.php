@@ -22,5 +22,5 @@ foreach ($list as $key => $val) {
     //delete files from folder 
     unlink("$target/$val");
 }
-echo "done";
+echo "Badges have been succesfully removed. If you want to use them again, simply press the Copy Button!";
 ?>
