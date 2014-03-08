@@ -3,7 +3,7 @@
  * Plugin Name: UserPro Custom Badges
  * Plugin URI: http://www.daniel-klose.com
  * Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a>
- * Version: 0.3.5
+ * Version: 0.4
  * Author: Daniel Klose
  * Author URI: http://www.daniel-klose.com
  * License: GPL2
@@ -44,7 +44,7 @@ if (is_admin()) { // note the use of is_admin() to double check that this is hap
         'github_url' => 'https://github.com/kLOsk/upCustomBadges', // the github url of your github repo
         'zip_url' => 'https://github.com/kLOsk/upCustomBadges/zipball/master', // the zip url of the github repo
         'sslverify' => true, // wether WP should check the validity of the SSL cert when getting an update
-        'minimum' => '3.5.0', // which version of WordPress does your plugin require?
+        'minimum' => '3.5', // which version of WordPress does your plugin require?
         'tested' => '3.8.1', // which version of WordPress is your plugin tested up to?
         'readme' => 'README.md', // which file to use as the readme for the version number
         'access_token' => '', // Access private repositories by authorizing under Appearance > Github Updates when this example plugin is installed
