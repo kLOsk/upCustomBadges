@@ -1,29 +1,29 @@
 <?php
-/**
- * Plugin Name: UserPro Custom Badges
- * Plugin URI: http://www.daniel-klose.com
- * Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a>
- * Version: 0.7
- * Author: Daniel Klose
- * Author URI: http://www.daniel-klose.com
- * License: GPL2
- *  Copyright 2014  Daniel Klose info@daniel-klose.com
+/*
+ Plugin Name: UserPro Custom Badges
+ Plugin URI: http://www.daniel-klose.com
+ Description: This plugin adds additional badges to the UserPro Plugin. The UserPro Plugin is required in order to use this Plugin. Make sure to install and enable UserPro, before installing UserPro Custom Badges. Buy UserPro here: <a href="http://goo.gl/S1sOgz">http://goo.gl/S1sOgz</a> 
+ Version: 0.6
+ Author: Daniel Klose
+ Author URI: http://www.daniel-klose.com
+ License: GPL2
+ Copyright 2014  Daniel Klose info@daniel-klose.com
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License, version 2, as 
+ published by the Free Software Foundation.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
     
-    Badges by http://symb.ly/
- */
+ Badges by http://symb.ly/
+*/
  
  /** Admin Menu */
 add_action( 'admin_menu', 'my_plugin_menu' );
