@@ -22,5 +22,5 @@ foreach ($list as $key => $val) {
     //copy file to new folder 
     copy("$src/$val", "$dest/$val");
 }
-echo "done";
+echo "Badges have been succesfully copied. Head over to the UserPro Badges Settings to use them!";
 ?>
