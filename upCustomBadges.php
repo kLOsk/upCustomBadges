@@ -50,8 +50,8 @@ function github_plugin_updater_init() {
 			'github_url' => 'https://github.com/kLOsk/upCustomBadges',
 			'zip_url' => 'https://github.com/kLOsk/upCustomBadges/archive/master.zip',
 			'sslverify' => true,
-			'requires' => '3.0',
-			'tested' => '3.8',
+			'requires' => '3.5',
+			'tested' => '3.8.1',
 			'readme' => 'README.md',
 			'access_token' => '',
 		);
